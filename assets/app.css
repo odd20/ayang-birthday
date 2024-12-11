@@ -257,3 +257,58 @@ body {
   -webkit-text-stroke: 1px rgb(89, 3, 56);
 }
 
+
+/* Menata wrapper audio */
+audio {
+  position: absolute;
+  top: 10px; /* Menjaga jarak 10px dari atas */
+  left: 10px; /* Menjaga jarak 10px dari kiri */
+  width: 300px; /* Atur lebar audio player */
+  max-width: 100%; /* Agar tetap responsif */
+  background-color: #091126; /* Warna latar belakang */
+  border-radius: 8px; /* Membuat sudut melengkung */
+  padding: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Menambahkan bayangan */
+  z-index: 1000; /* Agar audio player berada di atas elemen lainnya */
+}
+
+/* Menampilkan hanya tombol play */
+audio {
+  position: absolute;
+  top: 10px; /* Jarak dari atas */
+  left: 10px; /* Jarak dari kiri */
+  width: 40px; /* Lebar tombol play */
+  height: 40px; /* Tinggi tombol play */
+  background-color: transparent; /* Latar belakang transparan */
+  border: none; /* Menghilangkan border */
+  padding: 0;
+  z-index: 1000; /* Agar tombol play tetap terlihat di atas */
+  outline: none; /* Menghilangkan outline */
+}
+
+/* Menyembunyikan kontrol lainnya */
+audio::-webkit-media-controls {
+  display: none !important; /* Menyembunyikan semua kontrol */
+}
+
+/* Menampilkan hanya tombol play */
+audio::-webkit-media-controls-play-button {
+  display: block !important; /* Menampilkan tombol play */
+  width: 40px;
+  height: 40px;
+  background-color: #091126; /* Warna tombol play */
+  border-radius: 50%;
+  color: #fff; /* Warna teks tombol play */
+  font-size: 20px; /* Ukuran font tombol play */
+  padding: 0;
+}
+
+audio::-webkit-media-controls-mute-button,
+audio::-webkit-media-controls-volume-slider,
+audio::-webkit-media-controls-current-time-display,
+audio::-webkit-media-controls-time-remaining-display,
+audio::-webkit-media-controls-progress-bar {
+  display: none !important; /* Menyembunyikan kontrol lainnya */
+}
+
+
