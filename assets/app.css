@@ -256,3 +256,64 @@ body {
   color: #fff;
   -webkit-text-stroke: 1px rgb(89, 3, 56);
 }
+
+
+/* Menata wrapper audio */
+audio {
+  position: absolute;
+  top: 10px; /* Menjaga jarak 10px dari atas */
+  left: 10px; /* Menjaga jarak 10px dari kiri */
+  width: 300px; /* Atur lebar audio player */
+  max-width: 100%; /* Agar tetap responsif */
+  background-color: #091126; /* Warna latar belakang */
+  border-radius: 8px; /* Membuat sudut melengkung */
+  padding: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Menambahkan bayangan */
+  z-index: 1000; /* Agar audio player berada di atas elemen lainnya */
+}
+
+/* Menata tombol kontrol (volume, play, dll.) */
+audio::-webkit-media-controls-panel {
+  background-color: #333; /* Panel latar belakang */
+  border-radius: 6px;
+}
+
+audio::-webkit-media-controls-play-button {
+  background-color: #091126; /* Warna tombol play */
+  color: #fff; /* Warna teks tombol play */
+  border-radius: 50%;
+  padding: 10px;
+  border: none;
+}
+
+audio::-webkit-media-controls-volume-slider {
+  background-color: #555;
+  border-radius: 10px;
+}
+
+audio::-webkit-media-controls-mute-button,
+audio::-webkit-media-controls-volume-control-container {
+  display: none;
+}
+
+audio::-webkit-media-controls-current-time-display {
+  font-size: 14px;
+  color: #fff;
+}
+
+audio::-webkit-media-controls-time-remaining-display {
+  font-size: 14px;
+  color: #fff;
+}
+
+/* Efek hover pada tombol */
+audio::-webkit-media-controls-play-button:hover {
+  background-color: #5f6a77; /* Ubah warna tombol saat hover */
+  cursor: pointer;
+}
+
+/* Kontrol volume slider */
+audio::-webkit-media-controls-volume-slider {
+  background: #5f6a77;
+}
+
