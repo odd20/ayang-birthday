@@ -1,0 +1,258 @@
+/* Styling Halaman */
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+
+  font-family: Arial, sans-serif;
+}
+#confetti{
+	background: #f680d0;
+	height: 100%;
+	left: 0px;
+	position: fixed;
+	top: 0px;
+	width: 100%;
+	z-index: -1;
+}
+
+.book-container {
+  perspective: 2000px;
+  width: 400px;
+  height: 500px;
+  position: relative;
+}
+
+.book {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+}
+
+.page {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: white;
+  border: 1px solid #ddd;
+  transform-origin: left;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  transition: transform 1s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.page:nth-child(1) {
+  z-index: 6;
+  background: url(../assets/img/bgbook.png);
+  background-size: cover; /* Mengatur agar latar belakang menutupi seluruh container */
+  background-position: center; /* Pusatkan latar belakang */
+  background-repeat: no-repeat; /* Hindari pengulangan gambar */
+  color: white;
+}
+
+
+
+
+.page:nth-child(2) {
+  z-index: 5;
+  background: url(../assets/img/bgbook.png);
+  background-size: cover; /* Mengatur agar latar belakang menutupi seluruh container */
+  background-position: center; /* Pusatkan latar belakang */
+  background-repeat: no-repeat; /* Hindari pengulangan gambar */
+  color: white;
+  text-align: justify;
+}
+
+.page:nth-child(3) {
+  z-index: 4;
+  background: #e7fbb9;
+}
+
+.page:nth-child(4) {
+  z-index: 3;
+  background: #c3e8fe;
+}
+
+.page:nth-child(5) {
+  z-index: 2;
+  background: #d3d3d3;
+}
+
+.page:nth-child(6) {
+  z-index: 1;
+  background: #ececec;
+}
+
+/* Animasi Membuka */
+.page.flipped {
+  transform: rotateY(-180deg);
+}
+
+.photo-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 150px);
+  gap: 15px;
+  width: 90%;
+  max-width: 1200px;
+  position: relative;
+  transform: rotate(-2deg);
+}
+
+/* Foto */
+.photo {
+  position: relative;
+  transform: rotate(calc(-5deg + 10deg * random()));
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Efek Hover */
+.photo:hover {
+  transform: scale(1.1) rotate(0);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.cover-header{
+  font-size: 23px;
+  color:#f680d0;
+  -webkit-text-stroke: 1px rgb(89, 3, 56); /* Ketebalan dan warna border */
+}
+
+.info{
+  font-size: 12px;
+  color: #000;
+}
+
+.first-page img {
+  width: 75%;
+  height: auto;
+  border: 5px solid #ffadad; /* Warna pink muda */
+  border-radius: 50%; /* Membuat bingkai berbentuk lingkaran */
+  padding: 8px;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(255, 175, 175, 0.5);
+}
+
+.first-page img::before {
+  content: '💖'; /* Menambahkan ikon hati di atas gambar */
+  font-size: 30px;
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.first-page img:hover {
+  transform: scale(1.05); /* Efek zoom saat hover */
+  box-shadow: 0 0 25px rgba(168, 216, 234, 1); /* Glow lebih besar saat hover */
+}
+
+
+.first-page-text, .last-text {
+  font-size: 10px;
+  color: #000;
+}
+
+.photo-gallery {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* 6 kolom */
+  grid-template-rows: repeat(3, 1fr); /* 3 baris */
+  gap: 5px; /* Jarak antar foto */
+  width: 100%; /* Sesuaikan dengan container */
+  height: 100%; /* Sesuaikan dengan container */
+  padding: 5px; /* Padding di dalam galeri */
+  box-sizing: border-box; /* Termasuk padding dalam ukuran */
+}
+
+.photo-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 5px; /* Sudut melengkung */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Bayangan lembut */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.photo-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Proporsi gambar tetap */
+  transition: transform 0.3s ease;
+}
+
+.photo-item:hover img {
+  transform: scale(1.1); /* Zoom-in saat hover */
+}
+
+.photo-item:hover {
+  transform: scale(1.05); /* Sedikit memperbesar kotak saat hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Bayangan lebih besar saat hover */
+}
+
+
+
+/* Container Umum */
+.photo-grid-1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; /* Jarak antar foto */
+  flex-wrap: wrap;
+}
+
+/* Styling untuk Foto */
+.photo-item-x {
+  width: 120px; /* Lebar foto */
+  height: 120px; /* Tinggi foto */
+  overflow: hidden;
+  border-radius: 10px; /* Membuat sudut melengkung */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Efek bayangan */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animasi hover */
+  position: relative;
+}
+
+/* Gambar */
+.photo-item-x img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Memastikan gambar pas di dalam kotak */
+  transition: transform 0.3s ease; /* Efek zoom saat hover */
+}
+
+/* Efek Hover */
+.photo-item-x:hover img {
+  transform: scale(1.1); /* Zoom-in saat hover */
+}
+
+.photo-item-x:hover {
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Menambah bayangan saat hover */
+}
+
+/* Styling the header outside the book container */h
+.header-outside {
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #fff;
+  -webkit-text-stroke: 1px rgb(89, 3, 56);
+}
